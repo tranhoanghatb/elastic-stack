@@ -238,4 +238,3 @@ services:
     entrypoint: ../docker/celery_worker.sh
     volumes:
       - .:/app
-    networks:
