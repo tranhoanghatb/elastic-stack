@@ -1,5 +1,5 @@
 
-from apps.celery import celery_app
+from celery_app import celery_app
 
 
 @celery_app.task(
@@ -11,5 +11,10 @@ from apps.celery import celery_app
     task_reject_on_worker_lost=True,
 )
 def ingest_data(self, **kwargs):
-    # grab all data
-    pass
+    response = helpers.bulk(
+        client,
+        docs,
+        refresh=True,
+        request_timeout=60 * 10,
+    )
+    
