@@ -1,0 +1,10 @@
+.DS_store
+.idea/
+.vscode/
+docs_cn/.ipynb_checkpoints/
+__pycache__/
+*.pyc
+*.env
+csv/
+
+geckodriver.log

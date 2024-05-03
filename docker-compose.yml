@@ -225,3 +225,17 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
+
+  worker:
+    build: .
+    tty: true
+    environment:
+      - PYTHONPATH=/app/src
+      - RABBITMQ_LOGIN=guest
+      - RABBITMQ_PASS=guest
+      - RABBITMQ_HOST=rabbitmq:5672
+    working_dir: /app/src
+    entrypoint: ../docker/celery_worker.sh
+    volumes:
+      - .:/app
+    networks:

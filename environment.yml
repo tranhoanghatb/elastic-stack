@@ -1,0 +1,6 @@
+name: es_ingest_worker
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - celery
