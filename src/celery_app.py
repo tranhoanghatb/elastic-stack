@@ -9,5 +9,5 @@ celery_app = Celery(
         rabbitmq_pass="guest",
         rabbitmq_host=os.environ["RABBITMQ_HOST"],
     ),
-    include=["apps.crawler.tasks"],
+    include=["celery_tasks"],
 )
