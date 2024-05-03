@@ -1,0 +1,12 @@
+name: es_tripadvisor_nyc
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - elasticsearch
+  - eland=8.12.1
+  - celery
+  - ipykernel
+  - pip
+  - pip:
+    - eland[pytorch]
