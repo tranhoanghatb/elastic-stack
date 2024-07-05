@@ -3,7 +3,15 @@ filebeat.inputs:
   id: default-filestream
   paths:
     - ingest_data/*.log
-
+    
+filebeat.modules:
+- module: netflow
+  log:
+    enabled: true
+    var:
+      netflow_host: ${ELASTIC_HOSTS}
+      netflow_port: 2055
+      
 filebeat.autodiscover:
   providers:
     - type: docker
